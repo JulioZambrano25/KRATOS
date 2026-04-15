@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐾TU AMIGO KRATOS🐾</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to top, #fceabb, #f8b500);
+        text-align: center;
+        color: #333;
+    }
+
+    .container {
+        padding: 30px;
+    }
+
+    img {
+        width: 220px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+        margin-top: 20px;
+    }
+
+    h1 {
+        margin-top: 20px;
+    }
+
+    .mensaje {
+        max-width: 600px;
+        margin: 20px auto;
+        font-size: 18px;
+        line-height: 1.6;
+        background: rgba(255,255,255,0.7);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .firma {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .heart {
+        font-size: 30px;
+        animation: latido 1.5s infinite;
+    }
+
+    @keyframes latido {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🐾KRATOS🐾</h1>
+    <h1>Su amigo de confianza</h1>
+
+    <img src="IMAGENES/KRATOS1.jpg" alt="Mi perrito">
+
+    <div class="mensaje">
+        <p>Hola… 🐶</p>
+
+        <p>
+        Sé que me estás buscando en la casa, en la puerta, en esos lugares donde siempre estaba pendiente de todo… como buen dueño que era 😌
+        </p>
+
+        <p>
+        No te preocupes, sigo aquí… solo que ahora descanso bajo mi planta de limón 🍋, mi lugar favorito. ¿Te acuerdas cuánto me gustaba jugar con ellos? Nunca me aburría… siempre tenía energía para una vuelta más contigo.
+        </p>
+
+        <p>
+        A veces no quería que me tocaras, es verdad… pero tú sabías cuándo sí. Porque lo nuestro no era cualquier cosa… era compañía de verdad ❤️
+        </p>
+
+        <p>
+        Gracias por abrirme la puerta cada vez que quería salir. Yo siempre regresaba rápido… porque mi lugar era contigo. Siempre lo fue.
+        </p>
+
+        <p>
+        Y sí… sé que yo mandaba en la casa 😎🐾 pero tú eras mi persona.
+        </p>
+
+        <p>
+        No estés triste por mucho tiempo… mejor recuérdame corriendo, jugando, esperando en la puerta, o mirándote como diciendo “aquí estoy, todo está bajo control”.
+        </p>
+
+        <p>
+        Porque así sigo… cuidando, a mi manera.
+        </p>
+
+        <p>
+        Nos volveremos a ver… pero mientras tanto, cada vez que veas un limón caer 🍋… acuérdate de mí.
+        </p>
+
+        <p class="firma">
+        🐾 Tu fiel compañero.... KRATOS  🐾
+        </p>
+    </div>
+
+    <div class="heart">❤️</div>
+</div>
+
+<!-- 🎵 AUDIO -->
+<audio id="musica" autoplay loop>
+    <source src="MUSICA/Amigo.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const audio = document.getElementById("musica");
+
+// Intento de reproducción automática
+window.addEventListener("load", () => {
+    let playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {
+            // Si el navegador bloquea, se activa con el primer toque
+            document.addEventListener("click", () => {
+                audio.play();
+            }, { once: true });
+
+            document.addEventListener("touchstart", () => {
+                audio.play();
+            }, { once: true });
+        });
+    }
+});
+</script>
+
+</body>
+</html>
